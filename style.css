@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'montserratbold';
+    src: url('/font/montserrat-bold-webfont.woff2') format('woff2'),
+         url('/font/montserrat-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('/font/montserrat-regular-webfont.woff2') format('woff2'),
+         url('/font/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body{
+    font-family: 'montserratbold';
+    overflow-x: hidden;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 10vh;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1{
+    font-size: 3rem;
+}
+header h1 a{
+    text-decoration: none;
+    color: #E32121;
+}
+.header-btn a{
+    text-decoration: none;
+    padding: 1rem 2rem;
+    margin: 0 calc(0.8rem + 1vw);
+    position: relative;
+    border-radius: 50px;
+    display: inline-block;
+    width: 75px;
+}
+.header-btn a img{
+    position: absolute;
+    top: 5px;
+    right: 5px;   
+}
+.header-btn a:nth-child(1){
+    background-color: white;
+    border: solid 3px #E32121;
+    color: #E32121;
+}
+.header-btn a:nth-child(2){
+    background-color: #E32121;
+    color: white;
+    margin-right: 0;
+}
+
+header h1 a .logo-span{
+    -webkit-text-stroke: 2px #E32121;
+     color: white;
+}
+.bottom-nav{
+    display: none;
+}
+
+aside{
+    position: absolute;
+    background: #E32121;
+    width: 100px;
+    height: 100px;
+    top: 45%;
+    border-radius: 50%;
+    right: -50px;
+}
+aside img{
+    width: 30px;
+    position: relative;
+    top: 33%;
+    left: 12%;
+    transform: rotate(270deg);
+}
+
+section{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.index-uv{
+    background: #f0efef;
+    height: 25rem;
+    width: 17rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: 10px 10px 15px rgba(255, 255, 255, 0.3), 10px 10px 15px rgba(29, 38, 48, 0.3), inset -5px -5px 15px rgba(0, 0, 0, 0.6), inset 10px 10px 15px rgba(255, 255, 255, 0.8);
+}
+.index-uv h2{
+    color: #E32121;
+}
+.index-uv .uv-nb{
+    -webkit-text-stroke: 3px #E32121;
+    font-size: calc(8rem + 8vw);
+    color: #f0efef;
+    margin-top: 4rem;
+}
+.uv-info p{
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+.uv-info{
+    width: 40%;
+}
+.uv-info p span{
+    font-family: 'montserratregular';
+    font-size: 1rem;
+}
+.bg{
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+}
+@media screen and (max-width:750px){
+    .bg{
+        display: none;
+    }
+    aside{
+        display: none;
+    }
+    .header-btn{
+        display: none;
+    }
+    header{
+        justify-content: center;
+    }
+    .bottom-nav{
+        display: block;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        height: 100%;
+        clip-path: ellipse(70% 25% at 50% 115%);
+        background-color: #E32121;
+        transition: all 1.5s ease;
+    }
+    .bottom-nav-btn{
+        position: absolute;
+        bottom: 5px;
+        left: 48%;
+    }
+    .bottom-nav-btn button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer
+    }
+    .bottom-nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .bottom-nav ul li{
+        list-style: none;
+        color: white    ;
+        margin: 7rem;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    .expanded{
+        clip-path: ellipse(90% 900% at 50% 115%);
+    }
+    .bottom-nav-btn button img{
+        transition: all 1s ease;
+    }
+    .expanded-nav{
+        transform: rotate(180deg);
+    }
+    section{
+        flex-direction: column;
+    }
+    .index-uv{
+        background: #f0efef;
+        height: 15rem;
+        width: 11rem;
+    }
+    .index-uv .uv-nb{
+        font-size: calc(5rem + 8vw);
+        margin-top: 2rem;
+    }
+    .uv-info p{
+        margin: 0.5rem 0;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .uv-info{
+        width: 90%;
+    }
+    .uv-info p span{
+        font-family: 'montserratregular';
+        font-size: 1rem;
+    }
+}
